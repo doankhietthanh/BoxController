@@ -179,6 +179,8 @@ p {
   justify-content: start;
   align-items: center;
   padding: 10px;
+
+  user-select: none;
 }
 
 .item-button {
