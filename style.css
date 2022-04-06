@@ -158,6 +158,10 @@ p {
   align-items: center;
 }
 
+.brightness-title {
+  display: flex;
+}
+
 .controllers {
   width: 100%;
   margin: 10px 0px;
@@ -168,13 +172,13 @@ p {
 }
 
 .controller-item {
-  width: 70px;
-  height: 70px;
+  width: calc(100% / 3);
+  height: 90px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  margin: 10px;
+  padding: 10px;
 }
 
 .item-button {
@@ -215,14 +219,6 @@ p {
   font-size: 12px;
 }
 
-.item-status-on {
-  color: #fff;
-}
-
-.item-status-off {
-  color: var(--color-gray);
-}
-
 .item-description span {
   padding: 0 3px;
   font-size: 8px;
@@ -236,6 +232,19 @@ p {
   background-color: var(--color-active);
 }
 
+.item-power.active .item-button,
+.item-scenes.active .item-button,
+.item-snooze.active .item-button {
+  color: var(--color-dark);
+  background-color: #fff;
+}
+
+.item-status.active,
+.item-status-on.active,
+.item-status-off.active {
+  color: #fff;
+}
+
 .pick-color {
   width: 20px;
   height: 20px;
@@ -247,7 +256,7 @@ p {
 /* Footer */
 .footer {
   width: 100%;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -292,6 +301,7 @@ p {
   font-size: 14px;
   color: var(--color-gray);
 }
+
 .brightness-slider {
   flex: 1;
 
@@ -335,4 +345,32 @@ p {
   border-radius: 5px;
   background-color: #000000;
   cursor: n-resize;
+}
+
+/*  */
+.screen-scenes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.scenes-item {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 20px 0;
+
+  background-color: #333;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.scenes-item-title {
+  text-align: center;
 }

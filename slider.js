@@ -1,16 +1,22 @@
 const sliderCover = document.querySelector(".slider-cover");
 const sliderVertical = document.querySelector(".slider-vertical");
 const sliderHandle = document.querySelector(".slider-handle");
+const brightnessValue = document.querySelector(".brightness-value");
 
 let isClicked = false;
 
+const getBrightness = (e) => {
+  const value =
+    ((e.pageY - (sliderCover.offsetTop + 155)) / sliderCover.offsetHeight) *
+    100;
+  brightnessValue.innerHTML = `${Math.floor(100 - value)}%`;
+  console.log("Brightness: " + Math.floor(100 - value) + "%");
+  return (sliderVertical.style.top = value + "%");
+};
+
 sliderCover.addEventListener("mousedown", (e) => {
   isClicked = true;
-
-  sliderVertical.style.top =
-    ((e.pageY - (sliderCover.offsetTop + 140)) / sliderCover.offsetHeight) *
-      100 +
-    "%";
+  getBrightness(e);
 });
 
 sliderCover.addEventListener("mouseup", () => {
@@ -19,17 +25,10 @@ sliderCover.addEventListener("mouseup", () => {
 
 sliderCover.addEventListener("mousemove", (e) => {
   if (isClicked) {
-    sliderVertical.style.top =
-      ((e.pageY - (sliderCover.offsetTop + 140)) / sliderCover.offsetHeight) *
-        100 +
-      "%";
+    getBrightness(e);
   }
 });
 
 sliderCover.addEventListener("mouseleave", () => {
-  isClicked = false;
-});
-
-sliderCover.addEventListener("mouseup", () => {
   isClicked = false;
 });

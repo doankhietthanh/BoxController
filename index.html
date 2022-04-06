@@ -1,133 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <title>Box Controller</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <div class="header">
-        <div class="header-button-left" id="back">
-          <span class="material-icons"> arrow_back </span>
-        </div>
-        <div class="header-name">
-          <h4>Lamp</h4>
-          <p>PHILIP Hue</p>
-        </div>
-        <div class="header-button-left">
-          <span class="material-icons"> more_vert </span>
-        </div>
-      </div>
-      <div class="main">
-        <div class="main-wrapper">
-          <div class="main-1">
-            <div class="brightness">
-              <div class="brightness-slider">
-                <div class="slider-cover">
-                  <div class="slider-vertical">
-                    <div class="slider-handle"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="brightness-title">
-                <h4>Brightness</h4>
-              </div>
+        <div class="header">
+            <div class="header-button-left" id="back">
+                <span class="material-icons"> arrow_back </span>
             </div>
-            <div class="controllers">
-              <div class="controller-item item-color">
-                <div class="item-button">
-                  <div class="pick-color"></div>
-                  <span class="material-icons item-button-right">
-                    chevron_right
-                  </span>
-                </div>
-                <div class="item-title">Color</div>
-                <div class="item-description"></div>
-              </div>
-
-              <div class="controller-item item-snooze">
-                <div class="item-button">
-                  <span class="material-icons"> snooze </span>
-                </div>
-                <div class="item-title">Snooze</div>
-                <div class="item-description">
-                  <div class="item-timer">30 mins</div>
-                  <span>-</span>
-                  <div class="item-status-off">Off</div>
-                </div>
-              </div>
-
-              <div class="controller-item item-scenes">
-                <div class="item-button">
-                  <span class="material-icons"> nights_stay </span>
-                  <span class="material-icons item-button-right">
-                    chevron_right
-                  </span>
-                </div>
-                <div class="item-title">Scenes</div>
-                <div class="item-description">
-                  <div class="item-status-off">Off</div>
-                </div>
-              </div>
-
-              <div class="controller-item item-auto active">
-                <div class="item-button">
-                  <span class="material-icons"> brightness_auto </span>
-                </div>
-                <div class="item-title">Auto</div>
-                <div class="item-description"></div>
-              </div>
-
-              <div class="controller-item item-power">
-                <div class="item-button">
-                  <span class="material-icons"> power_settings_new </span>
-                </div>
-                <div class="item-title"></div>
-                <div class="item-description">
-                  <div class="item-status-on">On</div>
-                  <span>-</span>
-                  <div class="item-status-off">Off</div>
-                </div>
-              </div>
-
-              <div class="controller-item item-settings">
-                <div class="item-button">
-                  <span class="material-icons"> settings </span>
-                </div>
-                <div class="item-title">Settings</div>
-                <div class="item-description"></div>
-              </div>
+            <div class="header-name">
+                <h4>Lamp</h4>
+                <p>PHILIP Hue</p>
             </div>
-          </div>
-          <div class="main-2">Color Picker</div>
+            <div class="header-button-left">
+                <span class="material-icons"> more_vert </span>
+            </div>
         </div>
-      </div>
-      <div class="footer">
-        <div class="locked"><span class="material-icons"> lock </span></div>
-        <div class="timer">
-          <h4>Locked</h4>
-          <span>-</span>
-          <p>48 mins</p>
+        <div class="main">
+            <div class="main-wrapper">
+                <div class="screen-home">
+                    <div class="brightness">
+                        <div class="brightness-slider">
+                            <div class="slider-cover">
+                                <div class="slider-vertical">
+                                    <div class="slider-handle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brightness-title">
+                            <h4 class="brightness-value">50%</h4>
+                            <h4>Brightness</h4>
+                        </div>
+                    </div>
+                    <div class="controllers">
+                        <div class="controller-item item-color">
+                            <div class="item-button">
+                                <div class="pick-color"></div>
+                                <span class="material-icons item-button-right">
+                                    chevron_right
+                                </span>
+                            </div>
+                            <div class="item-title">Color</div>
+                            <div class="item-description"></div>
+                        </div>
+
+                        <div class="controller-item item-snooze">
+                            <div class="item-button">
+                                <span class="material-icons"> snooze </span>
+                            </div>
+                            <div class="item-title">Snooze</div>
+                            <div class="item-description">
+                                <div class="item-timer">30 mins</div>
+                                <span>-</span>
+                                <div class="item-status">Off</div>
+                            </div>
+                        </div>
+
+                        <div class="controller-item item-scenes">
+                            <div class="item-button">
+                                <span class="material-icons"> nights_stay </span>
+                                <span class="material-icons item-button-right">
+                                    chevron_right
+                                </span>
+                            </div>
+                            <div class="item-title">Scenes</div>
+                            <div class="item-description">
+                                <div class="item-status">Off</div>
+                            </div>
+                        </div>
+
+                        <div class="controller-item item-auto">
+                            <div class="item-button">
+                                <span class="material-icons"> brightness_auto </span>
+                            </div>
+                            <div class="item-title">Auto</div>
+                            <div class="item-description"></div>
+                        </div>
+
+                        <div class="controller-item item-power">
+                            <div class="item-button">
+                                <span class="material-icons"> power_settings_new </span>
+                            </div>
+                            <div class="item-title"></div>
+                            <div class="item-description">
+                                <div class="item-status-on">On</div>
+                                <span>-</span>
+                                <div class="item-status-off">Off</div>
+                            </div>
+                        </div>
+
+                        <div class="controller-item item-settings">
+                            <div class="item-button">
+                                <span class="material-icons"> settings </span>
+                            </div>
+                            <div class="item-title">Settings</div>
+                            <div class="item-description"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen-color">Color Picker</div>
+                <div class="screen-scenes">
+                    <div class="scenes-item">
+                        <div class="scenes-item-icon-left">
+                            <span class="material-icons">
+                                bed
+                            </span>
+                        </div>
+                        <div class="scenes-item-title">
+                            <h4>Sleep</h4>
+                            <p>On</p>
+                        </div>
+                        <div class="scenes-item-icon-right">
+                            <span class="material-icons">
+                                more_horiz
+                            </span>
+                        </div>
+                    </div>
+                    <div class="scenes-item">
+                        <div class="scenes-item-icon-left">
+                            <span class="material-icons">
+                                bed
+                            </span>
+                        </div>
+                        <div class="scenes-item-title">
+                            <h4>Sleep</h4>
+                            <p>On</p>
+                        </div>
+                        <div class="scenes-item-icon-right">
+                            <span class="material-icons">
+                                more_horiz
+                            </span>
+                        </div>
+                    </div>
+                    <div class="scenes-item">
+                        <div class="scenes-item-icon-left">
+                            <span class="material-icons">
+                                bed
+                            </span>
+                        </div>
+                        <div class="scenes-item-title">
+                            <h4>Sleep</h4>
+                            <p>On</p>
+                        </div>
+                        <div class="scenes-item-icon-right">
+                            <span class="material-icons">
+                                more_horiz
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen-settings">Settings</div>
+            </div>
         </div>
-      </div>
+        <div class="footer">
+            <div class="locked"><span class="material-icons"> lock </span></div>
+            <div class="timer">
+                <h4>Locked</h4>
+                <span>-</span>
+                <p>48 mins</p>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript" src="./slider.js"></script>
     <script type="text/javascript" src="./main.js"></script>
-  </body>
+</body>
+
 </html>
