@@ -272,6 +272,8 @@ const updateUIScenes = () => {
       : "OFF";
   });
   const current_scene = listScenes.find((item) => item.status);
-  itemTitle.textContent = current_scene.title;
-  sceneIcon.textContent = current_scene.icon;
+  if (current_scene) {
+    itemTitle.textContent = current_scene.title;
+    sceneIcon.textContent = current_scene.icon;
+  }
 };
