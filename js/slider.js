@@ -6,16 +6,17 @@ const brightnessValue = document.querySelector(".brightness-value");
 
 let isClicked = false;
 
-const getBrightness = (e) => {
+const changeBrightness = (e) => {
   const value =
-    ((e.pageY - (container.offsetTop + 130)) / sliderCover.offsetHeight) * 100;
-  brightnessValue.innerHTML = `${Math.floor(100 - value)}%`;
-  return (sliderVertical.style.top = value + "%");
+    (e.pageY - (container.offsetTop + 130)) / sliderCover.offsetHeight;
+  brightnessValue.innerHTML = `${Math.floor(100 - value * 100)}%`;
+  sliderVertical.style.top = value * 100 + "%";
+  sliderVertical.style.opacity = 1 - value;
 };
 
 sliderCover.addEventListener("mousedown", (e) => {
   isClicked = true;
-  getBrightness(e);
+  changeBrightness(e);
 });
 
 sliderCover.addEventListener("mouseup", () => {
@@ -24,7 +25,7 @@ sliderCover.addEventListener("mouseup", () => {
 
 sliderCover.addEventListener("mousemove", (e) => {
   if (isClicked) {
-    getBrightness(e);
+    changeBrightness(e);
   }
 });
 

@@ -1,154 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/colorPicker.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>Box Controller</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="header">
-            <div class="header-button-left" id="back">
-                <span class="material-icons"> arrow_back </span>
-            </div>
-            <div class="header-name">
-                <h4>Lamp</h4>
-                <p>PHILIP Hue</p>
-            </div>
-            <div class="header-button-left">
-                <span class="material-icons"> more_vert </span>
-            </div>
+      <div class="header">
+        <div class="header-button-left" id="back">
+          <span class="material-icons"> arrow_back </span>
         </div>
-        <div class="main">
-            <div class="main-wrapper">
-                <div class="screen-home">
-                    <div class="brightness">
-                        <div class="brightness-slider">
-                            <div class="slider-cover">
-                                <div class="slider-vertical">
-                                    <div class="slider-handle"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="brightness-title">
-                            <h4 class="brightness-value">50%</h4>
-                            <h4>Brightness</h4>
-                        </div>
-                    </div>
-                    <div class="controllers">
-                        <div class="controller-item item-color">
-                            <div class="item-button">
-                                <div class="pick-color"></div>
-                                <span class="material-icons item-button-right">
-                                    chevron_right
-                                </span>
-                            </div>
-                            <div class="item-title">Color</div>
-                            <div class="item-description"></div>
-                        </div>
-
-                        <div class="controller-item item-snooze">
-                            <div class="item-button">
-                                <span class="material-icons"> snooze </span>
-                            </div>
-                            <div class="item-title">Snooze</div>
-                            <div class="item-description">
-                                <div class="item-timer">30 mins</div>
-                                <span>-</span>
-                                <div class="item-status">Off</div>
-                            </div>
-                        </div>
-
-                        <div class="controller-item item-scenes">
-                            <div class="item-button">
-                                <span class="material-icons"> nights_stay </span>
-                                <span class="material-icons item-button-right">
-                                    chevron_right
-                                </span>
-                            </div>
-                            <div class="item-title">Scenes</div>
-                            <div class="item-description">
-                                <div class="item-status">Off</div>
-                            </div>
-                        </div>
-
-                        <div class="controller-item item-auto">
-                            <div class="item-button">
-                                <span class="material-icons"> brightness_auto </span>
-                            </div>
-                            <div class="item-title">Auto</div>
-                            <div class="item-description"></div>
-                        </div>
-
-                        <div class="controller-item item-power">
-                            <div class="item-button">
-                                <span class="material-icons"> power_settings_new </span>
-                            </div>
-                            <div class="item-title"></div>
-                            <div class="item-description">
-                                <div class="item-status-on">On</div>
-                                <span>-</span>
-                                <div class="item-status-off">Off</div>
-                            </div>
-                        </div>
-
-                        <div class="controller-item item-settings">
-                            <div class="item-button">
-                                <span class="material-icons"> settings </span>
-                            </div>
-                            <div class="item-title">Settings</div>
-                            <div class="item-description"></div>
-                        </div>
-                    </div>
+        <div class="header-name">
+          <h4>Lamp</h4>
+          <p>PHILIP Hue</p>
+        </div>
+        <div class="header-button-left">
+          <span class="material-icons"> more_vert </span>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main-wrapper">
+          <div class="screen-home">
+            <div class="brightness">
+              <div class="brightness-slider">
+                <div class="slider-cover">
+                  <div class="slider-vertical">
+                    <div class="slider-handle"></div>
+                  </div>
                 </div>
-                <div class="screen-color">
-                    <div class="color-picker-container">
-                        <div id="hsl-selected-color-back">
-                            <div id="hsl-selected-color"></div>
-                        </div>
-                        <div class="slider-group">
-                            <div class="slider-container"><label>hue</label><input type="number" id="number-h" min="0"
-                                    max="360" step="1" /><input type="range" id="slider-h" min="0" max="360" step="1" />
-                            </div>
-                            <div class="slider-container"><label>saturation</label><input type="number" id="number-s"
-                                    min="0" max="100" step="1" /><input type="range" id="slider-s" min="0" max="100"
-                                    step="1" /></div>
-                            <div class="slider-container"><label>lightness</label><input type="number" id="number-l"
-                                    min="0" max="100" step="1" /><input type="range" id="slider-l" min="0" max="100"
-                                    step="1" />
-                            </div>
-                            <div class="slider-container"><label>alpha</label><input type="number" id="number-a" min="0"
+              </div>
+              <div class="brightness-title">
+                <h4 class="brightness-value">50%</h4>
+                <h4>Brightness</h4>
+              </div>
+            </div>
+            <div class="controllers">
+              <div class="controller-item item-color">
+                <div class="item-button">
+                  <div class="pick-color"></div>
+                  <span class="material-icons item-button-right">
+                    chevron_right
+                  </span>
+                </div>
+                <div class="item-title">Color</div>
+                <div class="item-description"></div>
+              </div>
+
+              <div class="controller-item item-snooze">
+                <div class="item-button">
+                  <span class="material-icons"> snooze </span>
+                </div>
+                <div class="item-title">Snooze</div>
+                <div class="item-description">
+                  <div class="item-timer">30 mins</div>
+                  <span>-</span>
+                  <div class="item-status">Off</div>
+                </div>
+              </div>
+
+              <div class="controller-item item-scenes">
+                <div class="item-button">
+                  <span class="material-icons"> nights_stay </span>
+                  <span class="material-icons item-button-right">
+                    chevron_right
+                  </span>
+                </div>
+                <div class="item-title">Scenes</div>
+                <div class="item-description">
+                  <div class="item-status">Off</div>
+                </div>
+              </div>
+
+              <div class="controller-item item-auto">
+                <div class="item-button">
+                  <span class="material-icons"> brightness_auto </span>
+                </div>
+                <div class="item-title">Auto</div>
+                <div class="item-description"></div>
+              </div>
+
+              <div class="controller-item item-power">
+                <div class="item-button">
+                  <span class="material-icons"> power_settings_new </span>
+                </div>
+                <div class="item-title"></div>
+                <div class="item-description">
+                  <div class="item-status-on">On</div>
+                  <span>-</span>
+                  <div class="item-status-off">Off</div>
+                </div>
+              </div>
+
+              <div class="controller-item item-settings">
+                <div class="item-button">
+                  <span class="material-icons"> settings </span>
+                </div>
+                <div class="item-title">Settings</div>
+                <div class="item-description"></div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-color">
+            <div class="color-picker-container">
+              <div id="hsl-selected-color-back">
+                <div id="hsl-selected-color"></div>
+              </div>
+              <div class="slider-group">
+                <div class="slider-container">
+                  <label>hue</label
+                  ><input
+                    type="number"
+                    id="number-h"
+                    min="0"
+                    max="360"
+                    step="1"
+                  /><input
+                    type="range"
+                    id="slider-h"
+                    min="0"
+                    max="360"
+                    step="1"
+                  />
+                </div>
+                <div class="slider-container">
+                  <label>saturation</label
+                  ><input
+                    type="number"
+                    id="number-s"
+                    min="0"
+                    max="100"
+                    step="1"
+                  /><input
+                    type="range"
+                    id="slider-s"
+                    min="0"
+                    max="100"
+                    step="1"
+                  />
+                </div>
+                <div class="slider-container">
+                  <label>lightness</label
+                  ><input
+                    type="number"
+                    id="number-l"
+                    min="0"
+                    max="100"
+                    step="1"
+                  /><input
+                    type="range"
+                    id="slider-l"
+                    min="0"
+                    max="100"
+                    step="1"
+                  />
+                </div>
+                <!-- <div class="slider-container"><label>alpha</label><input type="number" id="number-a" min="0"
                                     max="1" step="0.05" /><input type="range" id="slider-a" min="0" max="1"
                                     step="0.05" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="screen-scenes">
-
-                </div>
-                <div class="screen-settings">Settings</div>
+                            </div> -->
+              </div>
             </div>
+          </div>
+          <div class="screen-scenes"></div>
+          <div class="screen-settings">Settings</div>
         </div>
-        <div class="footer">
-            <div class="locked"><span class="material-icons"> lock </span></div>
-            <div class="timer">
-                <h4>Locked</h4>
-                <span>-</span>
-                <p>48 mins</p>
-            </div>
+      </div>
+      <div class="footer">
+        <div class="locked"><span class="material-icons"> lock </span></div>
+        <div class="timer">
+          <h4>Locked</h4>
+          <span>-</span>
+          <p>48 mins</p>
         </div>
+      </div>
     </div>
 
     <script type="text/javascript" src="./js/slider.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./js/colorPicker.js"></script>
-</body>
-
+  </body>
 </html>

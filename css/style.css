@@ -326,7 +326,7 @@ p {
 }
 
 .slider-vertical {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255, 1);
   width: 100%;
   /* height: 50%; */
   border-radius: 17px;
@@ -337,6 +337,7 @@ p {
   position: absolute;
   bottom: 0;
   top: 50%;
+  opacity: 0.5;
 }
 
 .slider-handle {
@@ -360,6 +361,8 @@ p {
 }
 
 .scenes-item {
+  user-select: none;
+
   width: 80%;
   display: flex;
   flex-direction: row;
@@ -380,4 +383,15 @@ p {
 .scenes-item.active {
   background-color: #fff;
   color: var(--color-dark);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

@@ -1,5 +1,6 @@
 // setup
 const currentHSL = document.getElementById("hsl-selected-color");
+
 const sliders = [];
 const hsla = [200, 100, 50, 1];
 const letters = ["h", "s", "l", "a"];
@@ -39,7 +40,7 @@ function getCol(value) {
 // --------------------
 function update() {
   // update sliders
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
     hsla[i] = sliders[i].value;
     let fill = "-webkit-linear-gradient(left, " + getCol(letters[i]) + ")";
     sliders[i].style.background = fill;
@@ -50,11 +51,12 @@ function update() {
   currentHSL.style.background = color;
 
   document.querySelector(".pick-color").style.background = color;
+  sliderVertical.style.background = color;
 }
 
 //		Setup Events
 // --------------------
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 3; i++) {
   // get slider + number input
   let slider = document.getElementById("slider-" + letters[i]);
   let number = document.getElementById("number-" + letters[i]);
