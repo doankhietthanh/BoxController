@@ -92,7 +92,6 @@ itemPower.addEventListener("click", (e) => {
   } else {
     console.log("Power on");
     itemPower.classList.add("active");
-    console.log(document.querySelector(".item-power .item-description"));
     document
       .querySelector(".item-power .item-description .item-status-on")
       .classList.add("active");
@@ -106,24 +105,26 @@ itemPower.addEventListener("click", (e) => {
 // Scenes
 let isScenes = false;
 const itemScenes = document.querySelector(".item-scenes");
-itemScenes.addEventListener("click", (e) => {
-  const itemStatus = document.querySelector(
-    ".item-scenes .item-description .item-status"
-  );
-  if (isScenes) {
-    console.log("Scenes off");
-    itemScenes.classList.remove("active");
-    itemStatus.classList.remove("active");
-    itemStatus.textContent = "Off";
-    isScenes = false;
-  } else {
-    console.log("Scenes on");
-    itemScenes.classList.add("active");
-    itemStatus.classList.add("active");
-    itemStatus.textContent = "On";
-    isScenes = true;
-  }
-});
+const itemStatus = document.querySelector(
+  ".item-scenes .item-description .item-status"
+);
+document
+  .querySelector(".item-scenes .item-button span:nth-child(1)")
+  .addEventListener("click", (e) => {
+    if (isScenes) {
+      console.log("Scenes off");
+      itemScenes.classList.remove("active");
+      itemStatus.classList.remove("active");
+      itemStatus.textContent = "Off";
+      isScenes = false;
+    } else {
+      console.log("Scenes on");
+      itemScenes.classList.add("active");
+      itemStatus.classList.add("active");
+      itemStatus.textContent = "On";
+      isScenes = true;
+    }
+  });
 
 // Snooze
 let isSnooze = false;
@@ -133,16 +134,86 @@ itemSnooze.addEventListener("click", (e) => {
     ".item-snooze .item-description .item-status"
   );
   if (isSnooze) {
-    console.log("Snooze off");
+    // console.log("Snooze off");
     itemSnooze.classList.remove("active");
     itemStatus.classList.remove("active");
     itemStatus.textContent = "Off";
     isSnooze = false;
   } else {
-    console.log("Snooze on");
+    // console.log("Snooze on");
     itemSnooze.classList.add("active");
     itemStatus.classList.add("active");
     itemStatus.textContent = "On";
     isSnooze = true;
   }
+});
+
+const listScenes = [
+  {
+    name: "sleep",
+    title: "Sleep",
+    icon: "bed",
+    status: false,
+  },
+  {
+    name: "work",
+    title: "Work",
+    icon: "work_history",
+    status: false,
+  },
+];
+
+listScenes.forEach((scene) => {
+  document.querySelector(".screen-scenes").innerHTML += `
+  <div class="scenes-item" id=${scene.name}>
+                        <div class="scenes-item-icon-left">
+                            <span class="material-icons">
+                                ${scene.icon}
+                            </span>
+                        </div>
+                        <div class="scenes-item-title">
+                            <h4>${scene.title}</h4>
+                            <p>${scene.status ? "ON" : "OFF"}</p>
+                        </div>
+                        <div class="scenes-item-icon-right">
+                            <span class="material-icons">
+                                more_horiz
+                            </span>
+                        </div>
+                    </div>  
+  `;
+});
+
+const allScenes = document.querySelectorAll(".scenes-item");
+allScenes.forEach((scene, index) => {
+  scene.addEventListener("click", (e) => {
+    const findSelectedScene = listScenes.find((item) => item.name === scene.id);
+    allScenes.forEach((scene1, index1) => {
+      scene1.classList.remove("active");
+      listScenes[index1].status = false;
+      isScenesItem = findSelectedScene.status;
+      scene1.querySelector(".scenes-item-title p").textContent = "OFF";
+    });
+    if (!isScenesItem) {
+      scene.classList.add("active");
+      listScenes[index].status = true;
+      isScenesItem = findSelectedScene.status;
+      scene.querySelector(".scenes-item-title p").textContent = "ON";
+
+      itemScenes.querySelector(".item-button span:nth-child(1)").textContent =
+        findSelectedScene.icon;
+      itemScenes.querySelector(".item-title").textContent =
+        findSelectedScene.title;
+      itemScenes.querySelector(".item-status").textContent = "On";
+      itemScenes.classList.add("active");
+      itemStatus.classList.add("active");
+    } else {
+      scene.classList.remove("active");
+      listScenes[index].status = false;
+      isScenesItem = findSelectedScene.status;
+      scene.querySelector(".scenes-item-title p").textContent = isScenesItem
+        ? "ON"
+        : "OFF";
+    }
+  });
 });
