@@ -1,7 +1,9 @@
 const mainElement = document.querySelector(".main");
 const mainWrapper = document.querySelector(".main-wrapper");
 const totalScreens = document.querySelector(".main-wrapper").children.length;
-const CONTEXT_WIDTH = 270;
+const mainContainer = document.querySelector(".main");
+
+const CONTEXT_WIDTH = mainContainer.offsetWidth; // 270
 
 const contextData = [
   {
@@ -50,7 +52,6 @@ const changeContext = (contextName) => {
 
 contextData.forEach((context) => {
   context.triggerElement.forEach((triggerElement) => {
-    // console.log(document.querySelector(""));
     const triggerElementDOM = document.querySelector(triggerElement);
     triggerElementDOM.addEventListener("click", () => {
       changeContext(context.name);
