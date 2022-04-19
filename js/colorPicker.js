@@ -1,5 +1,10 @@
 // setup
 const currentHSL = document.getElementById("hsl-selected-color");
+const divPickColor = document.createElement("div");
+divPickColor.className = "pick-color";
+document
+  .querySelector(".item-color .item-button span:nth-child(1)")
+  .appendChild(divPickColor);
 
 const sliders = [];
 const hsla = [200, 100, 50, 1];

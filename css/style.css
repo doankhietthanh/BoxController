@@ -138,8 +138,6 @@ p {
   transition: all 0.3s ease;
 }
 
-.main-home {
-}
 .main-pick-color {
   width: 50%;
 }
@@ -177,7 +175,6 @@ p {
 
   user-select: none;
 }
-
 .item-button {
   width: 70px;
   border-radius: 20px;
@@ -243,8 +240,8 @@ p {
 }
 
 .item-status.active,
-.item-status-on.active,
-.item-status-off.active {
+.item-status-left.active,
+.item-status-right.active {
   color: #fff;
 }
 
