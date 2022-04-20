@@ -19,16 +19,7 @@ sliderCover.addEventListener("mousedown", (e) => {
   changeBrightness(e);
 });
 
-sliderCover.addEventListener("touchstart", (e) => {
-  isClicked = true;
-  changeBrightness(e);
-});
-
 sliderCover.addEventListener("mouseup", () => {
-  isClicked = false;
-});
-
-sliderCover.addEventListener("touchend", () => {
   isClicked = false;
 });
 
@@ -38,14 +29,23 @@ sliderCover.addEventListener("mousemove", (e) => {
   }
 });
 
+sliderCover.addEventListener("mouseleave", () => {
+  isClicked = false;
+});
+
+// Touch events
+sliderCover.addEventListener("touchend", () => {
+  isClicked = false;
+});
+
 sliderCover.addEventListener("touchmove", (e) => {
   if (isClicked) {
     changeBrightness(e);
   }
 });
-
-sliderCover.addEventListener("mouseleave", () => {
-  isClicked = false;
+sliderCover.addEventListener("touchstart", (e) => {
+  isClicked = true;
+  changeBrightness(e);
 });
 
 sliderCover.addEventListener("touchleave", () => {
